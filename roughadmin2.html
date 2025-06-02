@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-indigo-700 text-white">
+                <div class="flex items-center justify-center h-16 px-4 bg-indigo-800">
+                    <span class="text-xl font-semibold">ProjectHub</span>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <div class="space-y-1">
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md bg-indigo-800 text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-project-diagram mr-3"></i>
+                            Projects
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-tasks mr-3"></i>
+                            Tasks
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Team
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-calendar-alt mr-3"></i>
+                            Calendar
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Reports
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                    </div>
+                    <div class="mt-auto mb-4">
+                        <div class="p-4 bg-indigo-800 rounded-lg">
+                            <p class="text-sm">Upgrade to <span class="font-semibold">Pro</span> for more features!</p>
+                            <button class="mt-2 w-full px-3 py-2 text-xs font-medium rounded-md bg-white text-indigo-700 hover:bg-gray-100">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile sidebar -->
+        <div class="md:hidden fixed inset-0 z-40">
+            <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
+            <div class="relative flex flex-col w-full max-w-xs bg-indigo-700">
+                <div class="flex items-center justify-center h-16 px-4 bg-indigo-800">
+                    <span class="text-xl font-semibold text-white">ProjectHub</span>
+                    <button class="ml-auto p-1 rounded-md text-white hover:bg-indigo-600 focus:outline-none">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <div class="space-y-1">
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md bg-indigo-800 text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-project-diagram mr-3"></i>
+                            Projects
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-tasks mr-3"></i>
+                            Tasks
+                        </a>
+                        <a href="#" class="flex items-center px-2 py-3 text-sm font-medium rounded-md hover:bg-indigo-600 text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top navigation -->
+            <header class="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200">
+                <div class="flex items-center">
+                    <button class="md:hidden p-2 rounded-md text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="relative ml-4">
+                        <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 focus:outline-none">
+                            <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="User profile">
+                            <span class="hidden md:inline text-sm font-medium">John Doe</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main content area -->
+            <main class="flex-1 overflow-y-auto p-4">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Dashboard</h1>
+                    <p class="text-gray-600">Welcome back, John! Here's what's happening with your projects.</p>
+                </div>
+
+                <!-- Stats cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Active Projects</p>
+                                <p class="text-2xl font-bold">12</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-indigo-100 text-indigo-600">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-green-500 mt-2">+2 from last week</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Tasks Completed</p>
+                                <p class="text-2xl font-bold">48</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-green-500 mt-2">+5 from yesterday</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Team Members</p>
+                                <p class="text-2xl font-bold">8</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">No change</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Upcoming Deadlines</p>
+                                <p class="text-2xl font-bold">3</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-red-100 text-red-600">
+                                <i class="fas fa-calendar-times"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-red-500 mt-2">Due this week</p>
+                    </div>
+                </div>
+
+                <!-- Projects and Recent Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Projects Table -->
+                    <div class="lg:col-span-2 bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-gray-800">Recent Projects</h2>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Project</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Due Date</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Progress</th>
+                                        <th scope="col" class="relative px-6 py-3"><span class="sr-only">Actions</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-md flex items-center justify-center">
+                                                    <i class="fas fa-box-open text-indigo-600"></i>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-900">Website Redesign</div>
+                                                    <div class="text-sm text-gray-500">Marketing</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 15, 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 65%"></div>
+                                            </div>
+                                            <span class="text-xs text-gray-500">65%</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-md flex items-center justify-center">
+                                                    <i class="fas fa-mobile-alt text-blue-600"></i>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-900">Mobile App</div>
+                                                    <div class="text-sm text-gray-500">Development</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jun 1, 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 30%"></div>
+                                            </div>
+                                            <span class="text-xs text-gray-500">30%</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 h-10 w-10 bg-purple-100 rounded-md flex items-center justify-center">
+                                                    <i class="fas fa-chart-line text-purple-600"></i>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-900">Market Analysis</div>
+                                                    <div class="text-sm text-gray-500">Research</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 28, 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                            </div>
+                                            <span class="text-xs text-gray-500">85%</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="px-6 py-4 border-t border-gray-200">
+                            <button class="text-indigo-600 hover:text-indigo-900 text-sm font-medium">View all projects</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-gray-800">Recent Activity</h2>
+                        </div>
+                        <div class="divide-y divide-gray-200">
+                            <div class="px-6 py-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Jane Cooper</p>
+                                        <p class="text-sm text-gray-500">Completed "Homepage redesign" task</p>
+                                        <p class="text-xs text-gray-400 mt-1">2 hours ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Michael Smith</p>
+                                        <p class="text-sm text-gray-500">Commented on "Mobile app wireframes"</p>
+                                        <p class="text-xs text-gray-400 mt-1">5 hours ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Alex Johnson</p>
+                                        <p class="text-sm text-gray-500">Uploaded new files to "Website assets"</p>
+                                        <p class="text-xs text-gray-400 mt-1">1 day ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Sarah Williams</p>
+                                        <p class="text-sm text-gray-500">Created new project "Product launch"</p>
+                                        <p class="text-xs text-gray-400 mt-1">2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 border-t border-gray-200">
+                            <button class="text-indigo-600 hover:text-indigo-900 text-sm font-medium">View all activity</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
