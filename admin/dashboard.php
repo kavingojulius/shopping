@@ -44,11 +44,17 @@ $result = $conn->query("SELECT * FROM products");
             <div class="flex-grow-1 px-3 py-4 overflow-y-auto">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link sidebar-link active text-white rounded py-3">
+                        <a href="dashboard.php" class="nav-link sidebar-link active text-white rounded py-3">
                             <i class="fas fa-tachometer-alt me-2"></i>
                             Dashboard
                         </a>
                     </li>
+                    <li class="nav-item">
+                            <a href="../index.php" class="nav-link sidebar-link text-white rounded py-3">
+                                <i class="fas fa-home me-2"></i>
+                               Home Page
+                            </a>
+                        </li>
                     <li class="nav-item">
                         <a href="add_item.php" class="nav-link sidebar-link text-white rounded py-3">
                             <i class="fas fa-plus-circle me-2"></i>
@@ -75,9 +81,15 @@ $result = $conn->query("SELECT * FROM products");
                 <div class="offcanvas-body">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link sidebar-link active text-white rounded py-3">
+                            <a href="dashboard.php" class="nav-link sidebar-link active text-white rounded py-3">
                                 <i class="fas fa-tachometer-alt me-2"></i>
                                 Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../index.php" class="nav-link sidebar-link text-white rounded py-3">
+                                <i class="fas fa-home me-2"></i>
+                               Home Page
                             </a>
                         </li>
                         <li class="nav-item">

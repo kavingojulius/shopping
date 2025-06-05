@@ -21,11 +21,18 @@ $result = $conn->query($sql);
         <div class="text-center mb-5">
             <p class="lead">Are you an admin or a client?</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="admin/login.php" class="btn btn-primary">Admin Login</a>
-                <a href="client/login.php" class="btn btn-success">Client Login</a>
-                <a href="client/register.php" class="btn btn-info">Client Register</a>
-                <a href="client/index.php" class="btn btn-secondary">Visit Shop</a>
-                <?php if (isset($_SESSION['client_id'])) { ?>
+                <?php if (!isset($_SESSION['admin_id'])) { ?>
+                    <a href="admin/login.php" class="btn btn-primary">Admin Login</a>
+                    <a href="client/login.php" class="btn btn-success">Client Login</a>
+                    <a href="client/register.php" class="btn btn-info">Client Register</a>
+                    <a href="client/index.php" class="btn btn-secondary">Visit Shop</a>
+                <?php } else { ?>
+                    <a href="admin/dashboard.php" class="btn btn-primary">Dashboard</a>
+                <?php } ?>
+
+                                
+                
+                <?php if ( isset($_SESSION['client_id']) || isset($_SESSION['admin_id'])  ){ ?>
                     <a href="logout.php" class="btn btn-danger">Logout</a>
                 <?php } ?>
             </div>
